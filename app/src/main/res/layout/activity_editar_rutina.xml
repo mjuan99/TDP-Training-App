@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.activityEditarRutina.EditarRutinaActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleMargin="4dp"
+        app:titleTextAppearance="@style/titulo"
+        app:titleTextColor="#000000" />
+
+    <EditText
+        android:id="@+id/txtEdRutNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/alternategothic"
+        android:gravity="center"
+        android:hint="@string/nombrerutina"
+        android:inputType="text"
+        android:importantForAutofill="no"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#CCCCCC"
+        android:textColorHint="#CCCCCC"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <Button
+        android:id="@+id/btnEdRutEjercicios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="#000000"
+        android:fontFamily="@font/alternategothic"
+        android:onClick="verEjercicios"
+        android:text="@string/ejercicios"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEdRutNombre" />
+
+    <Switch
+        android:id="@+id/swEdRutRecordar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/alternategothic"
+        android:gravity="center"
+        android:text="@string/recordarme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEdRutEjercicios" />
+
+    <LinearLayout
+        android:id="@+id/loutEdRutRecordar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swEdRutRecordar">
+
+        <RadioGroup
+            android:id="@+id/rgroupEdRutRecordar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbtnEdRutSem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:fontFamily="@font/alternategothic"
+                android:text="@string/semanalmente"
+                android:textSize="16dp" />
+
+
+            <RadioButton
+                android:id="@+id/rbtnEdRutUna"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alternategothic"
+                android:text="@string/unasolavez"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:id="@+id/loutEdRutDias"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ToggleButton
+                    android:id="@+id/btnEdRutDia0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ems="3"
+                    android:fontFamily="@font/alternategothic"
+                    android:text="@string/dia0"
+                    android:textColor="#000000"
+                    android:textOff="@string/dia0"
+                    android:textOn="@string/dia0"
+                    android:textSize="13dp" />
+
+                <ToggleButton
+                    android:id="@+id/btnEdRutDia1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ems="3"
+                    android:fontFamily="@font/alternategothic"
+                    android:text="@string/dia1"
+                    android:textColor="#000000"
+                    android:textOff="@string/dia1"
+                    android:textOn="@string/dia1"
+                    android:textSize="13dp" />
+
+                <ToggleButton
+                    android:id="@+id/btnEdRutDia2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ems="3"
+                    android:fontFamily="@font/alternategothic"
+                    android:text="@string/dia2"
+                    android:textColor="#000000"
+                    android:textOff="@string/dia2"
+                    android:textOn="@string/dia2"
+                    android:textSize="13dp" />
+
+                <ToggleButton
+                    android:id="@+id/btnEdRutDia3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ems="3"
+                    android:fontFamily="@font/alternategothic"
+                    android:text="@string/dia3"
+                    android:textColor="#000000"
+                    android:textOff="@string/dia3"
+                    android:textOn="@string/dia3"
+                    android:textSize="13dp" />
+
+                <ToggleButton
+                    android:id="@+id/btnEdRutDia4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ems="3"
+                    android:fontFamily="@font/alternategothic"
+                    android:text="@string/dia4"
+                    android:textColor="#000000"
+                    android:textOff="@string/dia4"
+                    android:textOn="@string/dia4"
+                    android:textSize="13dp" />
+
+                <ToggleButton
+                    android:id="@+id/btnEdRutDia5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ems="3"
+                    android:fontFamily="@font/alternategothic"
+                    android:text="@string/dia5"
+                    android:textColor="#000000"
+                    android:textOff="@string/dia5"
+                    android:textOn="@string/dia5"
+                    android:textSize="13dp" />
+
+                <ToggleButton
+                    android:id="@+id/btnEdRutDia6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ems="3"
+                    android:fontFamily="@font/alternategothic"
+                    android:text="@string/dia6"
+                    android:textColor="#000000"
+                    android:textOff="@string/dia6"
+                    android:textOn="@string/dia6"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/loutEdRutFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingTop="8dp"
+                android:paddingRight="15dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txtEdRutFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/alternategothic"
+                    android:text="@string/fecha"
+                    android:textColor="#777777"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/txtInEdRutFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/alternategothic"
+                    android:gravity="right"
+                    android:textColor="#000000"
+                    android:textSize="16dp" />
+            </LinearLayout>
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/loutEdRutHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp"
+            android:paddingTop="8dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:id="@+id/txtEdRutHora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/alternategothic"
+                android:text="@string/hora"
+                android:textColor="#777777"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txtInEdRutHora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/alternategothic"
+                android:gravity="right"
+                android:textColor="#000000"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabEdRutEliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:onClick="eliminar"
+        app:backgroundTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabEdRutListo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:onClick="guardar"
+        app:backgroundTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_send" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
